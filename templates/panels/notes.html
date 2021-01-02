@@ -1,0 +1,34 @@
+{#-
+
+DISPLAY NOTES and REMOVE NOTES
+
+-#}
+{%- for bang in bomb.notes -%}
+<div id="note-display">
+ <a href="{{ bang[1] }}">
+  {{ bang[1] }}
+ </a>
+</div>
+........
+<div id="note-remove">
+ <a href="remove-note/{{ bang[0] }}">
+  remove
+ </a>
+</div>
+<br/>
+{%- endfor -%}
+<br/>
+{#-
+
+ADD NOTES
+
+-#}
+<div id="note-add">
+ <form action="add-note" method="POST">
+  <br/>
+  put things here:
+  <br/>
+  <input name="note" type="text"/>
+  <br/>
+ </form>
+</div>

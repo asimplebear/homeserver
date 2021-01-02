@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>bear net</title>
+    <!-- put in styling and whatnot for noscript-->
+    <script>
+      //if javascript suddenly appears go back to main
+      window.location.replace("/");
+    </script>
+  </head>
+  <body>
+    <h1> BETTER IF JS ENABLED...</h1>
+{#
+  PANELS
+#}
+{%- for panel in bomb.panels -%}
+  <div class="panel">
+{%- include panel -%}
+  </div>
+{%- endfor -%}
+{#
+  ENDPANELS
+#}
+    </div>
+  </body>
+</html>

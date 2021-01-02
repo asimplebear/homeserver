@@ -1,0 +1,57 @@
+:root {
+  --top: 100px;
+  --stagger: 300px;
+  /*         calc(var(top) * .3) etcetera */
+}
+
+* {
+  margin: 0;
+  /*scrollbar-width: none;*/
+}
+
+body {
+}
+
+.banner {
+  position: sticky;
+  top: 0;
+  opacity: .5;
+  /*above rack but below panels*/
+  z-index: 1;
+}
+
+.front {
+  width: 100%;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  height: 4em;
+  background-color: darkblue;
+  color: white;
+  z-index: 100;
+}
+
+.rack {
+  box-sizing: content-box;
+  height: 300px;
+  /*so children inherit*/
+  position: relative;
+  display: block;
+  overflow: auto;
+  background-color: darkred;
+}
+
+.panel {
+  box-sizing: content-box;
+  display: block;
+  overflow: auto;
+  position: absolute;
+  border: 5px solid yellow;
+  border-radius: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;  /*SET panVertPad IN SCRIPT.JS*/
+  margin-top: 30px;
+  background-color: f0f0f0;
+  word-wrap: break-all;
+}

@@ -1,0 +1,53 @@
+{#-
+        FILE IMAGE
+-#}
+{%- for bang in bomb.files -%}
+ {%- set ALTIMG = 'static/icons/NONE.png' -%}
+  {%- if ".txt" in bang[1] -%} {%- set ALTIMG = 'static/icons/TXT.png' -%}{%- endif -%}
+  {%- if ".pdf" in bang[1] -%} {%- set ALTIMG = 'static/icons/PDF.png' -%}{%- endif -%}
+  {%- if ".odt" in bang[1] -%} {%- set ALTIMG = 'static/icons/ODT.png' -%}{%- endif -%}
+<img alt="boo" height="auto" onerror="this.onerror=null; this.src='{{ ALTIMG }}'" src="static/assets/files/{{ bang[0] }}/{{ bang[1] }}" width="100"/>
+<br/>
+{#-
+        FILE NAME and DELIVER
+-#}
+<div id="file-display">
+ <a href="deliver-file/{{ bang[0] }}/{{ bang[1] }}">
+  {{ bang[1] }}
+ </a>
+</div>
+<br/>
+{#-
+        FILE REMOVE
+-#}
+<div id="file-remove">
+ <a href="remove-file/{{ bang[0] }}/{{ bang[1] }}">
+  remove
+ </a>
+</div>
+<br/>
+{#-
+        FILE DESCRIBE
+-#}
+<div id="file-describe">
+ {{ bang[2] }}
+ <form action="add-desc/{{ bang[0] }}/{{ bang[1] }}" method="post">
+  <input name="desc" placeholder="what is this?" type="text"/>
+ </form>
+ <br/>
+</div>
+{%- endfor -%}
+{#-
+        FILE ADD
+-#}
+<div id="file-add">
+ <form action="add-file" enctype="multipart/form-data" method="post">
+  <br/>
+  <input name="file" type="file"/>
+  <br/>
+  <button>
+   send
+  </button>
+ </form>
+</div>
+<br/>

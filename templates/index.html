@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   bear net
+  </title>
+  <noscript>
+   <meta content="0;url=noscript" http-equiv="refresh"/>
+  </noscript>
+  <script defer="" src="/static/js/script.js">
+  </script>
+  <link href="/static/css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="banner" id="banner">
+   {%- include "banner.html" -%}
+  </div>
+  <div class="front" id="front">
+   {%- include "front.html" -%}
+  </div>
+  <div class="rack" id="rack">
+{#-
+PANELS
+-#}
+{%- for panel in bomb.panels -%}
+   <div class="panel">
+ {%- include panel -%}
+   </div>
+{%- endfor -%}
+{#-
+ENDPANELS
+-#}
+  </div>
+ </body>
+</html>
